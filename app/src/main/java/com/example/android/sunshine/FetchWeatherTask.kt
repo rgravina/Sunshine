@@ -6,12 +6,17 @@ import java.net.URL
 
 class FetchWeatherTask(
         private val reader: HttpReader,
-        private val handler: (result: String?) -> Unit) : AsyncTask<URL, Void, String>() {
+        private val preExecute: () -> Unit,
+        private val postExecute: (result: String?) -> Unit) : AsyncTask<URL, Void, String>() {
     override fun doInBackground(vararg params: URL?): String? {
         return reader.read(params[0]!!)
     }
 
+    override fun onPreExecute() {
+        super.onPreExecute()
+        preExecute()
+    }
     override fun onPostExecute(result: String?) {
-        handler(result)
+        postExecute(result)
     }
 }

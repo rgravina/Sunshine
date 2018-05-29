@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.ContentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/forecast_load_error"
+        android:textSize="22sp"
+        android:visibility="invisible" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,5 +23,13 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:textSize="20sp" />
+
     </ScrollView>
-</android.support.v7.widget.ContentFrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+</FrameLayout>

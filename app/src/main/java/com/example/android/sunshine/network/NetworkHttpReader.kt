@@ -7,16 +7,18 @@ import java.util.*
 class NetworkHttpReader : HttpReader {
     override fun read(url: URL): String? {
         val urlConnection = url.openConnection() as HttpURLConnection
-        try {
+        return try {
             val inputStream = urlConnection.inputStream
             val scanner = Scanner(inputStream)
             scanner.useDelimiter("\\A")
             val hasInput = scanner.hasNext()
-            return if (hasInput) {
+            if (hasInput) {
                 scanner.next()
             } else {
                 null
             }
+        } catch (e: Exception) {
+            null
         } finally {
             urlConnection.disconnect()
         }
