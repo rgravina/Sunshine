@@ -15,7 +15,6 @@ import org.junit.runner.RunWith
 
 import org.junit.Rule
 
-
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
     @Rule
