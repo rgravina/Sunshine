@@ -5,7 +5,7 @@ import java.net.URL
 
 class UrlParser {
     companion object {
-        private const val STATIC_WEATHER_URL = "https://andfun-weather.udacity.com/staticweather"
+        private const val STATIC_WEATHER_URL = "https://andfun-weather.udacity.com/weather"
         private const val PARAM_QUERY = "q"
 
         fun buildUrl(locationQuery: String): URL {
