@@ -14,7 +14,7 @@ import com.example.android.sunshine.data.SunshinePreferences.getPreferredWeather
 import com.example.android.sunshine.network.NetworkHttpReader
 import com.example.android.sunshine.network.UrlParser
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ForecastAdapter.ListItemClickListener {
     private lateinit var progressBar: ProgressBar
     private lateinit var errorMessage: TextView
     private lateinit var weatherRecyclerView: RecyclerView
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         weatherRecyclerView.layoutManager = layoutManager
         weatherRecyclerView.setHasFixedSize(true)
-        weatherRecyclerView.adapter = ForecastAdapter()
+        weatherRecyclerView.adapter = ForecastAdapter(this)
 
         this.displayForecast()
     }
@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
             displayForecast()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onListItemClick(clickedItemIndex: Int) {
     }
 
     private fun displayForecast() {
