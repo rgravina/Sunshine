@@ -1,5 +1,6 @@
 package com.example.android.sunshine
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity(), ForecastAdapter.ListItemClickListener 
     }
 
     override fun onListItemClick(clickedItemIndex: Int) {
+        startActivity(Intent(this, DetailActivity::class.java))
     }
 
     private fun displayForecast() {
