@@ -49,8 +49,10 @@ class MainActivity : AppCompatActivity(), ForecastAdapter.ListItemClickListener 
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onListItemClick(clickedItemIndex: Int) {
-        startActivity(Intent(this, DetailActivity::class.java))
+    override fun onListItemClick(text: String) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(Intent.EXTRA_TEXT, text)
+        startActivity(intent)
     }
 
     private fun displayForecast() {

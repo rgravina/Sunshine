@@ -1,6 +1,7 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">Sunshine</string>
     <string name="action_refresh">Refresh</string>
+    <string name="action_share">Share Weather Details</string>
     <string name="forecast_load_error">Error getting forecast.</string>
 
     <!-- - - - - - - - - - - - - -->

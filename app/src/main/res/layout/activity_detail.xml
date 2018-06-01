@@ -4,4 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/tv_weather_data_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

@@ -27,7 +27,7 @@ class ForecastAdapter(private val listener: ListItemClickListener) : RecyclerVie
     }
 
     interface ListItemClickListener {
-        fun onListItemClick(clickedItemIndex: Int)
+        fun onListItemClick(text: String)
     }
 
     class ForecastAdapterViewHolder(itemView: View?, private val listener: ListItemClickListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
@@ -42,7 +42,7 @@ class ForecastAdapter(private val listener: ListItemClickListener) : RecyclerVie
         }
 
         override fun onClick(view: View?) {
-            listener.onListItemClick(adapterPosition)
+            listener.onListItemClick(weatherTextView.text.toString())
         }
     }
 }
